@@ -8,20 +8,20 @@ module.exports = {
     password: MYSQL_PASSWORD,
     database: 'blogs_api',
     host: HOSTNAME,
-    dialect: 'mysql'
+    dialect: 'mysql',
   },
   test: {
     username: MYSQL_USER,
     password: MYSQL_PASSWORD,
     database: 'blogs_api',
     host: HOSTNAME,
-    dialect: 'mysql'
+    dialect: 'mysql',
   },
   production: {
     username: MYSQL_USER,
     password: MYSQL_PASSWORD,
     database: 'blogs_api',
     host: HOSTNAME,
-    dialect: 'mysql'
-  }
-}
+    dialect: 'mysql',
+  },
+};
