@@ -1,7 +1,8 @@
 const model = require('../models');
 
 const register = async (dataUser) => {
-  await model.Users.create(dataUser);
+  const { dataValues: { id } } = await model.Users.create(dataUser);
+  return id;
 };
 
 const getByEmail = async (email) => {
