@@ -1,5 +1,5 @@
 const express = require('express');
-const { register } = require('../controllers/user');
+const { register } = require('../controllers/userController');
 const userValidation = require('../middlewares/userValidation');
 const generateToken = require('../middlewares/generateToken');
 
