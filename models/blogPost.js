@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     published: { type: DataTypes.NOW, allowNull: false },
     updated: { type: DataTypes.NOW, allowNull: false },
   },
-  { timestamps: true, createdAt: 'published', updatedAt: 'update' });
+  { timestamps: true, createdAt: 'published', updatedAt: 'updated' });
 
   blogPost.associate = (model) => {
     blogPost.belongsTo(model.Users, { foreignKey: 'userId', as: 'users' });
