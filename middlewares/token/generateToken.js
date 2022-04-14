@@ -8,7 +8,8 @@ const secret = process.env.SECRET || 'BlogsAPI*';
 
 const generateToken = (req, res) => {
   const { id, code } = req.user;
-  const token = jwt.sign(id, secret, jwtConfig);
+  const payload = { id };
+  const token = jwt.sign(payload, secret, jwtConfig);
 
   return res.status(code).json({ token });
 };
