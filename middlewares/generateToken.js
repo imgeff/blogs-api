@@ -1,11 +1,10 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 const jwtConfig = {
   algorithm: 'HS256',
 };
 
-const secret = process.env.SECRET;
+const secret = process.env.SECRET || 'BlogsAPI*';
 
 const generateToken = (req, res) => {
   const { id, code } = req.user;
