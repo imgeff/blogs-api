@@ -1,8 +1,8 @@
 const express = require('express');
 const { register, getAll, getById } = require('../controllers/userController');
-const userValidation = require('../middlewares/userValidation');
-const generateToken = require('../middlewares/generateToken');
-const authToken = require('../middlewares/authToken');
+const userValidation = require('../middlewares/validation/userValidation');
+const generateToken = require('../middlewares/token/generateToken');
+const authToken = require('../middlewares/token/authToken');
 
 const router = express.Router();
 
