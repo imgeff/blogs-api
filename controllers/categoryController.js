@@ -1,4 +1,4 @@
-const postService = require('../services/postService');
+const postService = require('../services/categoryService');
 
 const create = async (req, res) => {
   const { name } = req.body;
