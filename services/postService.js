@@ -1,8 +1,8 @@
 const model = require('../models');
 
-const create = async ({ title, content, categoryIds, userId }) => {
-  const newPost = { title, content, userId };
-  const { dataValues: { id } } = await model.BlogPost.create(newPost);
+const create = async ({ title, contentPost, categoryIds, userId }) => {
+  const newPost = { title, content: contentPost, userId };
+  const { dataValues: { id } } = await model.BlogPosts.create(newPost);
   newPost.id = id;
 
   const createPostsCategories = [];
