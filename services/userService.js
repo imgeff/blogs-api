@@ -12,7 +12,9 @@ const getAll = async () => {
 
 const getById = async (id) => {
   const user = await model.Users.findByPk('id', { where: { id }, raw: true });
-  return user;
+  if (!user) return { code: 404, content: { message: 'User does not exist' } };
+
+  return { code: 200, content: user };
 };
 
 const getByEmail = async (email) => {
