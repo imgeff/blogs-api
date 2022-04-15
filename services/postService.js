@@ -32,7 +32,7 @@ const allPosts = await model.BlogPosts.findAll({
   ],
 });
 
-  return allPosts;
+  return { code: 200, content: allPosts };
 };
 
 module.exports = {
