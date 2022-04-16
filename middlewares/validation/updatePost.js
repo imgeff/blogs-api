@@ -1,16 +1,10 @@
 const JOI = require('joi');
-const postService = require('../../services/postService');
+const userIsAdmin = require('../../helpers/userIsAdmin');
 
 const postSchema = JOI.object({
   title: JOI.string().required(),
   content: JOI.string().required(),
 });
-
-const userIsAdmin = async (userId, postId) => {
-  const { content: { dataValues } } = await postService.getById(postId);
-  const checkUser = dataValues.userId === userId;
-  return checkUser;
-};
 
 const updateValidation = async (req, res, next) => {
   const { userId } = req;
