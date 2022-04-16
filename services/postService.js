@@ -68,10 +68,21 @@ const destroy = async (postId) => {
   return { code: 204 };
 };
 
+const search = async (searchTerm) => {
+  const allPosts = await getAll();
+  const searchPosts = allPosts.content.filter((post) => {
+    const filter = post.title.includes(searchTerm) || post.content.includes(searchTerm);
+    return filter;
+  });
+
+  return { code: 200, content: searchPosts };
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
   destroy,
+  search,
 };
