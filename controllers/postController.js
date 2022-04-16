@@ -32,10 +32,17 @@ const destroy = async (req, res) => {
   return res.status(code).json();
 };
 
+const search = async (req, res) => {
+  const { q: searchTerm } = req.query;
+  const { code, content } = await postService.search(searchTerm);
+  return res.status(code).json(content);
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
   destroy,
+  search,
 };
