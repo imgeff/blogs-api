@@ -6,7 +6,7 @@ const userSchema = JOI.object({
   password: JOI.string().length(6).required(),
 });
 
-const userValidation = async (req, res, next) => {
+const createValidation = async (req, res, next) => {
   const { displayName, email, password } = req.body;
   const dataUser = { displayName, email, password };
 
@@ -16,4 +16,4 @@ const userValidation = async (req, res, next) => {
   return next();
 };
 
-module.exports = userValidation;
+module.exports = createValidation;

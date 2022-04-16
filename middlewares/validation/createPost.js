@@ -16,7 +16,7 @@ const categoryExist = async (categoryIds) => {
   return checkCategoryIds;
 };
 
-const postValidation = async (req, res, next) => {
+const createValidation = async (req, res, next) => {
   const { title, content, categoryIds } = req.body;
   const dataPost = { title, content, categoryIds };
 
@@ -29,4 +29,4 @@ const postValidation = async (req, res, next) => {
   return next();
 };
 
-module.exports = postValidation;
+module.exports = createValidation;
