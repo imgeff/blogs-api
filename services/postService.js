@@ -63,11 +63,15 @@ const update = async (newData, postId) => {
   return { code: 200, content: postUpdated };
 };
 
-// update({ title: 'test2', content: 'testContente2' }, 2).then((data) => console.log(data.content));
+const destroy = async (postId) => {
+  await model.BlogPosts.destroy({ where: { id: postId } });
+  return { code: 204 };
+};
 
 module.exports = {
   create,
   getAll,
   getById,
   update,
+  destroy,
 };
