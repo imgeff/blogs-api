@@ -22,9 +22,15 @@ const getByEmail = async (email) => {
   return user;
 };
 
+const destroy = async (userId) => {
+  await model.Users.destroy({ where: { id: userId } });
+  return { code: 204 };
+};
+
 module.exports = {
   register,
   getByEmail,
   getAll,
   getById,
+  destroy,
 };
