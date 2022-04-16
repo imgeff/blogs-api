@@ -56,8 +56,18 @@ const getById = async (id) => {
   return { code: 200, content: post };
 };
 
+const update = async (newData, postId) => {
+  await model.BlogPosts.update(newData, { where: { id: postId } });
+  const { content: { title, content, userId, categories } } = await getById(postId);
+  const postUpdated = { title, content, userId, categories };
+  return { code: 200, content: postUpdated };
+};
+
+// update({ title: 'test2', content: 'testContente2' }, 2).then((data) => console.log(data.content));
+
 module.exports = {
   create,
   getAll,
   getById,
+  update,
 };
