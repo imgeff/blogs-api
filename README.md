@@ -420,9 +420,9 @@ lista todas as Categorias e retorna na seguinte estrutura:
 ## Para instalar localmente
 
 1. Clone o repositório
-  * `git clone git@github.com:imgeff/Blog-API.git`
+  * `git clone git@github.com:imgeff/blogs-api.git`
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd Blog-API`
+    * `cd blogs-api`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -436,7 +436,7 @@ lista todas as Categorias e retorna na seguinte estrutura:
 
 
     
-## Stack utilizada
+## Tecnologias utilizadas
 
 **Back-end:** Node.js, Express, Sequelize
 
